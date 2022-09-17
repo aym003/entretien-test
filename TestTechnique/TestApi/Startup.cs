@@ -30,7 +30,8 @@ namespace TestApi
             services.AddDbContext<TestApiDbContext>(options =>
             {
                 var assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
-                options.UseSqlServer(Configuration.GetConnectionString("Database2"), b => b.MigrationsAssembly(assemblyName))
+                options.UseSqlite(Configuration.GetConnectionString("SqliteDatabase"),
+                        builder => builder.MigrationsAssembly(assemblyName))
                     .UseLoggerFactory(LoggerFactory.Create(builder => builder.AddFile("logs/sqlLogs.log")));
             });
             
