@@ -6,7 +6,7 @@ namespace CSharpAlgo
     {
         static void Main(string[] args)
         {
-           TestAlgo.TestLinqCountOccurence();
+           TestAlgo.Test3();
 
            Console.ReadKey();
         }
